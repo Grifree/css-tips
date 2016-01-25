@@ -69,3 +69,38 @@ body {
     }
 }
 ````
+
+
+### div边框相互覆盖
+````html
+<div class="box3 b-clear">
+    <div class="item"> 1 </div>
+    <div class="item"> 2 </div>
+    <div class="item"> 3 </div>
+    <div class="item"> 4 </div>
+    <div class="item item-on"> 5 </div>
+    <div class="item"> 6 </div>
+    <div class="item"> 7 </div>
+    <div class="item"> 8 </div>
+    <div class="item"> 9 </div>  
+</div>
+````
+
+````css
+.box3 {
+    width:320px;
+}
+.box3 .item{
+    box-sizing: initial;
+    width:100px;
+    height:100px;
+    border:5px solid yellow;
+    margin-right:-5px;
+    margin-bottom:-5px;
+}
+.box3 .item-on{
+    border:5px solid red;
+    position:relative;
+    z-index:10;<!--z-index和position必须一起才有效-->
+}
+````
